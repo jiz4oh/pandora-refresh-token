@@ -197,6 +197,7 @@ def get_argument_value(args, option, default=None):
 if __name__ == "__main__":
     users_file = get_argument_value(sys.argv, "-a", users_file)
     pool_token = get_argument_value(sys.argv, "-p", pool_token)
+    api_endpoint = get_argument_value(sys.argv, "-e", api_endpoint)
 
     if "-a" in sys.argv:
         process_users(users_file, session_tokens_file)

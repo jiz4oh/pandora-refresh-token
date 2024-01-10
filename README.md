@@ -4,13 +4,20 @@
 
 ## Usage
 
-将 `pandora-get-token.py` 放在 `pandora` 目录下，也即和 `config.json` 和 `license.jwt` 同一个目录，最后 `crontab -e` 添加以下代码
+1. 将 `pandora-get-token.py` 放在 `pandora` 目录下，也即和 `config.json` 和 `license.jwt` 同一个目录，最后 `crontab -e` 添加以下代码
 
-```
-23 4 * * 3 python3 XXXXXX
-```
+    ```
+    23 4 * * 3 python3 FILE_PATH -e API_ENDPOINT
+    ```
 
-notes: 将 `XXXXXX` 替换为pandora-get-token.py文件路径
+    1. 将 `FILE_PATH` 替换为pandora-get-token.py文件路径
+    2. 将 `API_ENDPOINT` 替换为自己服务器的地址，如 `http://127.0.0.1:8181/test111`
+
+2. (可选) 支持使用 `-p` 指定 `pool_token`
+
+    ```
+    23 4 * * 3 python3 FILE_PATH -e API_ENDPOINT -p POOL_TOKEN
+    ```
 
 ## Credits
 
